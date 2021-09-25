@@ -80,6 +80,15 @@
              else mobError.textContent="Invalid Mobile number";
          });
          
+         const pwd = document.querySelector('#pwd');
+         const pwdError = document.querySelector('.password-error');
+         pwd.addEventListener('input',function(){
+             let passRegex = RegExp('[a-zA-Z0-9_&%$#@]{8,}$');
+             if(passRegex.test(pwd.value))
+             pwdError.textContent="";
+             else pwdError.textContent="Invalid Password";          
+         });
+         
         const salary = document.querySelector('#salary');
         const output = document.querySelector('.salary-output');
         output.textContent = salary.value;
