@@ -88,6 +88,15 @@
              pwdError.textContent="";
              else pwdError.textContent="Invalid Password";          
          });
+
+         const url = document.querySelector('#url');
+         const urlError = document.querySelector('.url-error');
+         url.addEventListener('input',function(){
+             let urlRegex = RegExp('^(https?|chrome):\/\/[^\s$.?#].[^\s]*$');
+             if(urlRegex.test(url.value))
+             urlError.textContent="";
+             else urlError.textError="Invalid URL."; 
+         });
          
         const salary = document.querySelector('#salary');
         const output = document.querySelector('.salary-output');
